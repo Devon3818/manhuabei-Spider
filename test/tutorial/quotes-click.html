@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="MobileOptimized" content="320">
+    <meta name="applicable-device" content="pc"> 
+	<meta http-equiv="mobile-agent" content="format=[wml|xhtml|html5]; url=https://m.manhuabei.com/list/click/1/">    	
+	<title>漫画列表 - 漫画呗</title>  
+	<meta name="keyword" content="漫画呗,漫画堆,进击的巨人漫画,进击的巨人134,海贼王漫画,海贼王992">
+<meta name="description" content="漫画呗（原名 漫画堆，50漫画网）是更新漫画最快的漫画网。全网第一时间更新进击的巨人134，一拳超人180，海贼王992。进击的巨人漫画，一拳超人，海贼王漫画，鬼灭之刃漫画，斗破苍穹漫画，斗罗大陆漫画等热门日漫、国漫、美漫全网第一时间更新。漫画大全，好看的漫画一大堆！">
+<meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="6BaCLPqBU5v_WumSCGf8VMzON_XKUCe1_9WPbPUw6qisQbEfteVnqLIvmeJSHsk9jqxCmpMeRuS74vw2hUSy_A==">
+
+<link href="/assets/c5ccdd8c/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+<link href="/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<link href="/assets/7a5b1151/css/common.css" rel="stylesheet">
+<link href="/assets/7a5b1151/css/list.css" rel="stylesheet">
+<script src="/js/phone.js"></script>
+<script>;phone.check("https://m.manhuabei.com");</script> 
+	</head>
+<body class="clearfix">
+<!--[if lte IE 8]>
+<div class="ie8-warning-mask"></div>
+<div id="ie8-warning"><p>本页面采用HTML5+CSS3，您正在使用老版本 Internet Explorer ，在本页面的显示效果可能有差异。建议您升级到 <a
+        href="http://www.microsoft.com/china/windows/internet-explorer/" target="_blank">Internet Explorer 11</a>
+    或以下浏览器：
+    <br>
+    <a href="http://www.mozillaonline.com/"><img src="https://f.mlxsc.com/images/etc/browser-firefox.png" alt=""></a> /
+    <a href="http://www.baidu.com/s?wd=google%E6%B5%8F%E8%A7%88%E5%99%A8"><img src="https://f.mlxsc.com/images/etc/browser-chrome.png" alt=""></a> /
+    <a href="http://www.operachina.com/"><img src="https://f.mlxsc.com/images/etc/browser-opera.png" alt=""></a></p>
+</div>
+<![endif]-->
+<!--全站头部导航 开始-->
+<div class="mainNav">
+    <div class="mainNav_inner">
+        <div id="w4" class="mainNav_in_l"><a href="https://xiaoshuogui.com" target="_blank">轻小说</a></div>        <div class="mainNav_in_r" id="mainNav_in_r">
+            <ul class="user-login">
+                <li id="login_id_li"><a id="login_id" href="/login/">登录</a>|</li>
+                <li><a id="register_id" href="/register/">注册</a></li>
+            </ul>
+            <ul class="mainNav_dl user-action" id="mainNavDl">
+                <li>
+                    <img class="usr_im" id="avatar" src=""/>
+                    <a id="username" class="c_1" href="/member/" target="_blank"></a>                </li>
+                <li id="quit"><a href="/logout/">退出</a>|</li>
+                <li>
+                    <a href="/member/unread/">订阅<span class="c_2"  id="update_notice"> (<em id="update_count"></em>)</span></a>                    |
+                </li>
+                <li><a href="/member/" target="_blank">会员中心</a>|</li>
+                <li id="bookshelf">
+                    <span class="span_icon"></span><a class="c_1" href="/member/subscribe/">我的书架</a>                    <div class="book_wrap">
+                        <div class="book_open clearfix" id="bookOpen">
+                            <ul class="book_open_tabs tabs" id="head_nav_tab">
+                                <li class="font fl"><a href="#subscribe-list" data-toggle="tab">我的订阅</a></li>
+                                <li class="font fr active"><a href="#history-list" data-toggle="tab">观看历史</a></li>
+                            </ul>
+                            <span class="top"></span>
+                            <div class="head_nav_con tab-content" id="subscribe-list">
+                                <ul class="book_con_li">
+                                </ul>
+                            </div>
+                            <div class="head_nav_con tab-content active" id="history-list">
+                                <ul class="book_con_li">
+                                    <div class="no_content">你还没有观看过作品哦</div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<!--全站头部导航 结束-->
+<!--head topTheme 开始-->
+<div class="topTheme autoHeight">
+    <div class="topTheme_inner autoHeight">
+        <div class="dmzj-logo">
+            <a class="logo" href="/"><img src="https://f.mlxsc.com/images/logo/dmzj.png" alt=""></a>        </div>
+        
+        <!--搜素 开始-->
+        <div class="topTheme_in_search">
+            <div class="topTheme_in_search_input">
+                <div class="topTheme_search_input" tabindex="0" style="outline:none;">
+                    <input type="text" class="search_input_l" id="keywords" name="keywords" placeholder="请输入关键字..."
+                           autocomplete="off" style="color: rgb(153, 153, 153);">
+                    <input type="button" class="search_input_r" id="btnSearch" value="">
+                    <ul class="messagSjr autoHeight" style="display: none;" id="search-results"></ul>
+                </div>
+                <!--热门关键词-->
+                <ul id="w6" class="sear_keyword"><li data-key="1802"><a href="https://www.manhuabei.com/manhua/yiquanchaoren/">一拳超人</a></li>
+<li data-key="856"><a href="https://www.manhuabei.com/manhua/haizeiwang/">海贼王</a></li>
+<li data-key="39"><a href="https://www.manhuabei.com/manhua/jinjidejuren/">进击的巨人</a></li>
+<li data-key="3"><a href="https://www.manhuabei.com/manhua/doupocangqiong/">斗破苍穹</a></li>
+<li data-key="55"><a href="https://www.manhuabei.com/manhua/guimiezhiren/">鬼灭之刃</a></li>
+<li data-key="421"><a href="https://www.manhuabei.com/manhua/DrSTONE/">Dr.STONE 石纪元</a></li>
+<li data-key="1668"><a href="https://www.manhuabei.com/manhua/borenchuan/">博人传</a></li>
+<li data-key="2229"><a href="https://www.manhuabei.com/manhua/heisewuyecao/">黑色五叶草</a></li>
+<li data-key="71"><a href="https://www.manhuabei.com/manhua/bailianchengshen/">百炼成神</a></li>
+<li data-key="3609"><a href="https://www.manhuabei.com/manhua/yirenzhixia/">一人之下</a></li>
+<li data-key="15"><a href="https://www.manhuabei.com/manhua/yaoshenji/">妖神记</a></li>
+<li data-key="1844"><a href="https://www.manhuabei.com/manhua/yuedingdemenghuandao/">约定的梦幻岛</a></li></ul>                <!--热门关键词-->
+            </div>
+            <!--公告-->
+            <div class="announce">
+                <ul id="index-notice"><li data-key="17"><a href="/" target="_blank">骚年，来看漫画呗！</a></li></ul>            </div>
+            <!--公告 结束-->
+        </div>
+        <!--搜素 结束-->
+    </div>
+    <div class="topTheme_nav">
+        <!--主导航栏 开始-->
+        <div class="topTheme_nav_in">
+            <!--导航栏-->
+            <ul class="topTheme_nav_inl">
+                <li><a class="" href="/">首页</a></li>
+                <li><a class="" href="/list/riben/">日漫</a></li>
+                <li><a class="" href="/list/dalu/">国漫</a></li>
+                <li><a class="" href="/list/oumei/">美漫</a></li>
+                <li><a class="" href="/list/lianzai/">连载</a></li>
+                <li><a class="" href="/list/wanjie/">完结</a></li>
+                <li><a class="" href="/update/">最近更新</a></li>
+                <li><a class="" href="/rank/">排行榜</a></li>
+                <li><a class="cur " href="/list/">全部漫画</a></li>
+            </ul>
+            <!--导航栏 结束-->
+            <!--上传漫画-->
+            <div class="topTheme_nav_inr">
+                <a href="/member/index/" target="_blank">会员中心</a>            </div>
+            <!--上传漫画 结束-->
+        </div>
+
+    </div>
+    <!--topTheme 结束-->
+</div>
+<!--head topTheme 结束-->
+
+<div class="wrap_mhlist autoHeight">
+
+    <div class="wrap_mhlist_l con_left autoHeight">
+        <div class="wrap_list_head">
+            <div class="list_head_mid">
+                <div class="head_title">
+                    <span class="head_ico_o"></span>
+
+                    <h2>漫画<em class="c_3">列表</em></h2>
+                </div>
+                <ul class="pagination"><li class="first disabled"><span>首页</span></li>
+<li class="prev disabled"><span>上一页</span></li>
+<li class="active"><a href="/list/click/?page=1" data-page="0">1</a></li>
+<li><a href="/list/click/?page=2" data-page="1">2</a></li>
+<li><a href="/list/click/?page=3" data-page="2">3</a></li>
+<li><a href="/list/click/?page=4" data-page="3">4</a></li>
+<li><a href="/list/click/?page=5" data-page="4">5</a></li>
+<li><a href="/list/click/?page=6" data-page="5">6</a></li>
+<li><a href="/list/click/?page=7" data-page="6">7</a></li>
+<li><a href="/list/click/?page=8" data-page="7">8</a></li>
+<li><a href="/list/click/?page=9" data-page="8">9</a></li>
+<li><a href="/list/click/?page=10" data-page="9">10</a></li>
+<li class="next"><a href="/list/click/?page=2" data-page="1">下一页</a></li>
+<li class="last"><a href="/list/click/?page=520" data-page="519">尾页</a></li></ul>            </div>
+        </div>
+        <div class="wrap_list_con autoHeight">
+            <div class="autoHeight">
+            <span class="list_con_t">排序：</span>
+            <ul class="sorter clearfix">
+<li><a href="/list/post/?page=1" data-sort="post">按发布排序</a></li>
+<li><a href="/list/update/?page=1" data-sort="update">按更新排序</a></li>
+<li><a class="asc" href="/list/-click/?page=1" data-sort="-click">按点击排序</a></li>
+</ul>            <span class="comi_num">共<em class="c_6">18708</em>部漫画</span>
+            </div>
+            <div class="tab-con tab-content-selected autoHeight">
+                <div id="w0" class="list-view"><ul class='list_con_li clearfix'><li class="list-comic" data-key="1802">    <a class="comic_img" href="https://www.manhuabei.com/manhua/yiquanchaoren/"><img src="https://f.mlxsc.com/images/cover/201905/1558384189-Nm4NaFsOVxmHZf1.jpg" alt="一拳超人" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="一拳超人">
+    <h3><a href="https://www.manhuabei.com/manhua/yiquanchaoren/">一拳超人</a></h3>
+    <p>作者：村田雄介,ONE</p>
+    <p>类型：热血/战斗</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/yiquanchaoren/582954.html">原作版132话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/yiquanchaoren/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="856">    <a class="comic_img" href="https://www.manhuabei.com/manhua/haizeiwang/"><img src="https://f.mlxsc.com/images/cover/201812/1543711492cCyvU1SnsxO5FZv_.jpg" alt="海贼王" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="海贼王">
+    <h3><a href="https://www.manhuabei.com/manhua/haizeiwang/">海贼王</a></h3>
+    <p>作者：尾田荣一郎</p>
+    <p>类型：热血/搞笑/格斗</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/haizeiwang/585744.html">992话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/haizeiwang/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="39">    <a class="comic_img" href="https://www.manhuabei.com/manhua/jinjidejuren/"><img src="https://f.mlxsc.com/images/cover/201810/15391165129WGophC1Qxvw-Z-u.jpg" alt="进击的巨人" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="进击的巨人">
+    <h3><a href="https://www.manhuabei.com/manhua/jinjidejuren/">进击的巨人</a></h3>
+    <p>作者：谏山创</p>
+    <p>类型：热血/冒险/恐怖/奇幻</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/jinjidejuren/583633.html">133话东立版</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/jinjidejuren/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="3">    <a class="comic_img" href="https://www.manhuabei.com/manhua/doupocangqiong/"><img src="https://f.mlxsc.com/images/cover/201811/1541864772nbJNhLXFbsLtfoZL.jpg" alt="斗破苍穹" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="斗破苍穹">
+    <h3><a href="https://www.manhuabei.com/manhua/doupocangqiong/">斗破苍穹</a></h3>
+    <p>作者：天蚕土豆，任翔，知音漫客</p>
+    <p>类型：热血/玄幻/神魔</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/doupocangqiong/581381.html">867话 龙凤墟</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/doupocangqiong/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="55">    <a class="comic_img" href="https://www.manhuabei.com/manhua/guimiezhiren/"><img src="https://f.mlxsc.com/images/cover/201810/1539430191cZy0kummmUfCqSke.jpg" alt="鬼灭之刃" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="鬼灭之刃">
+    <h3><a href="https://www.manhuabei.com/manhua/guimiezhiren/">鬼灭之刃</a></h3>
+    <p>作者：吾峠呼世晴</p>
+    <p>类型：冒险/神鬼</p>
+    <p>状态：已完结</p>
+    <p>最新：<a href="/manhua/guimiezhiren/581944.html">206话特别短篇</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/guimiezhiren/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="421">    <a class="comic_img" href="https://www.manhuabei.com/manhua/DrSTONE/"><img src="https://f.mlxsc.com/images/cover/201811/1541235115zn9bDhfTha32Gx2-.jpg" alt="Dr.STONE 石纪元" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="Dr.STONE 石纪元">
+    <h3><a href="https://www.manhuabei.com/manhua/DrSTONE/">Dr.STONE 石纪元</a></h3>
+    <p>作者：稻垣理一郎,Boichi</p>
+    <p>类型：冒险/魔幻</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/DrSTONE/586079.html">170话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/DrSTONE/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="1668">    <a class="comic_img" href="https://www.manhuabei.com/manhua/borenchuan/"><img src="https://f.mlxsc.com/images/cover/201901/1546808577jSFPijotkGeGS15V.jpg" alt="博人传" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="博人传">
+    <h3><a href="https://www.manhuabei.com/manhua/borenchuan/">博人传</a></h3>
+    <p>作者：池本干雄，岸本齐史</p>
+    <p>类型：热血/冒险/励志</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/borenchuan/577429.html">50话 利用价值</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/borenchuan/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="2229">    <a class="comic_img" href="https://www.manhuabei.com/manhua/heisewuyecao/"><img src="https://f.mlxsc.com/images/cover/201908/1564686724og2fLtW3RMwuWJLe.jpg" alt="黑色五叶草" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="黑色五叶草">
+    <h3><a href="https://www.manhuabei.com/manhua/heisewuyecao/">黑色五叶草</a></h3>
+    <p>作者：田畠裕基</p>
+    <p>类型：冒险/魔法</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/heisewuyecao/586081.html">268话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/heisewuyecao/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="71">    <a class="comic_img" href="https://www.manhuabei.com/manhua/bailianchengshen/"><img src="https://f.mlxsc.com/images/cover/202007/1595408179iCPhtVHp3dHYhgIV.jpg" alt="百炼成神" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="百炼成神">
+    <h3><a href="https://www.manhuabei.com/manhua/bailianchengshen/">百炼成神</a></h3>
+    <p>作者：燃哉工作室</p>
+    <p>类型：玄幻/神魔/运动</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/bailianchengshen/586226.html">637话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/bailianchengshen/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="3609">    <a class="comic_img" href="https://www.manhuabei.com/manhua/yirenzhixia/"><img src="https://f.mlxsc.com/images/cover/201905/1559210083714360974f87d47.jpg" alt="一人之下" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="一人之下">
+    <h3><a href="https://www.manhuabei.com/manhua/yirenzhixia/">一人之下</a></h3>
+    <p>作者：动漫堂</p>
+    <p>类型：热血</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/yirenzhixia/585612.html">495</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/yirenzhixia/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="15">    <a class="comic_img" href="https://www.manhuabei.com/manhua/yaoshenji/"><img src="https://f.mlxsc.com/images/cover/201811/1541985733LAp3Cks4tAGu1S83.jpg" alt="妖神记" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="妖神记">
+    <h3><a href="https://www.manhuabei.com/manhua/yaoshenji/">妖神记</a></h3>
+    <p>作者：发飙的蜗牛</p>
+    <p>类型：热血/冒险/神魔</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/yaoshenji/586485.html">297话2 龙墟界域</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/yaoshenji/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="1844">    <a class="comic_img" href="https://www.manhuabei.com/manhua/yuedingdemenghuandao/"><img src="https://f.mlxsc.com/images/cover/201907/1564404803DurlkmiICCagm-El.jpg" alt="约定的梦幻岛" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="约定的梦幻岛">
+    <h3><a href="https://www.manhuabei.com/manhua/yuedingdemenghuandao/">约定的梦幻岛</a></h3>
+    <p>作者：白井カイウ,出水ぽすか</p>
+    <p>类型：冒险/科幻/悬疑</p>
+    <p>状态：已完结</p>
+    <p>最新：<a href="/manhua/yuedingdemenghuandao/581943.html">182话特别篇番外</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/yuedingdemenghuandao/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="1708">    <a class="comic_img" href="https://www.manhuabei.com/manhua/wodeyingxiongxueyuan/"><img src="https://f.mlxsc.com/images/cover/201901/1548570191qZxN-hnhKCugKkly.jpg" alt="我的英雄学院" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="我的英雄学院">
+    <h3><a href="https://www.manhuabei.com/manhua/wodeyingxiongxueyuan/">我的英雄学院</a></h3>
+    <p>作者：堀越耕平</p>
+    <p>类型：热血/格斗</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/wodeyingxiongxueyuan/459159.html">259话 静悄悄的开始</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/wodeyingxiongxueyuan/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="2237">    <a class="comic_img" href="https://www.manhuabei.com/manhua/wudengfendehuajia/"><img src="https://f.mlxsc.com/images/cover/201907/1564404401irAAWj1aR6fYuGh-.jpg" alt="五等分的花嫁" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="五等分的花嫁">
+    <h3><a href="https://www.manhuabei.com/manhua/wudengfendehuajia/">五等分的花嫁</a></h3>
+    <p>作者：春场葱</p>
+    <p>类型：爱情/校园/后宫</p>
+    <p>状态：已完结</p>
+    <p>最新：<a href="/manhua/wudengfendehuajia/465334.html">122话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/wudengfendehuajia/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="399">    <a class="comic_img" href="https://www.manhuabei.com/manhua/womenwufayiqixuexi/"><img src="https://f.mlxsc.com/images/cover/201811/1541235121Q4er8tArxhFGTb7U.jpg" alt="我们无法一起学习" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="我们无法一起学习">
+    <h3><a href="https://www.manhuabei.com/manhua/womenwufayiqixuexi/">我们无法一起学习</a></h3>
+    <p>作者：筒井大志</p>
+    <p>类型：欢乐向/校园/后宫</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/womenwufayiqixuexi/586080.html">178话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/womenwufayiqixuexi/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="5">    <a class="comic_img" href="https://www.manhuabei.com/manhua/douluodalu/"><img src="https://f.mlxsc.com/images/cover/201811/1541864770f7_-LZg1yeOb4rOx.jpg" alt="斗罗大陆" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="斗罗大陆">
+    <h3><a href="https://www.manhuabei.com/manhua/douluodalu/">斗罗大陆</a></h3>
+    <p>作者：风炫动漫唐家三少穆逢春</p>
+    <p>类型：热血/玄幻/穿越</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/douluodalu/586748.html">721话 无敌天才1</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/douluodalu/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="2314">    <a class="comic_img" href="https://www.manhuabei.com/manhua/huiyedaxiaojiexiangrangwogaobai/"><img src="https://f.mlxsc.com/images/cover/201907/1564405041DXaA7hlTLeQSosaZ.jpg" alt="辉夜大小姐想让我告白" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="辉夜大小姐想让我告白">
+    <h3><a href="https://www.manhuabei.com/manhua/huiyedaxiaojiexiangrangwogaobai/">辉夜大小姐想让我告白</a></h3>
+    <p>作者：赤坂アカ</p>
+    <p>类型：搞笑/恋爱/爱情</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/huiyedaxiaojiexiangrangwogaobai/584486.html">194话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/huiyedaxiaojiexiangrangwogaobai/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="1846">    <a class="comic_img" href="https://www.manhuabei.com/manhua/guanyuwozhuanshenghouchengweishilaimudenajianshi/"><img src="https://f.mlxsc.com/images/cover/201907/1564405420j1fe0VABh5-JLTpG.jpg" alt="关于我转生后成为史莱姆的那件事" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="关于我转生后成为史莱姆的那件事">
+    <h3><a href="https://www.manhuabei.com/manhua/guanyuwozhuanshenghouchengweishilaimudenajianshi/">关于我转生后成为史莱姆的那件事</a></h3>
+    <p>作者：伏濑，川上泰树</p>
+    <p>类型：冒险/轻小说/魔幻</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/guanyuwozhuanshenghouchengweishilaimudenajianshi/578625.html">75话 人魔会谈2</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/guanyuwozhuanshenghouchengweishilaimudenajianshi/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="2252">    <a class="comic_img" href="https://www.manhuabei.com/manhua/nvpengyoujiewoyixia/"><img src="https://f.mlxsc.com/images/cover/201907/1564405118VV67w2gw0MgJ5_G2.jpg" alt="女朋友、借我一下" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="女朋友、借我一下">
+    <h3><a href="https://www.manhuabei.com/manhua/nvpengyoujiewoyixia/">女朋友、借我一下</a></h3>
+    <p>作者：宫岛礼吏</p>
+    <p>类型：爱情/校园</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/nvpengyoujiewoyixia/585050.html">160话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/nvpengyoujiewoyixia/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="1805">    <a class="comic_img" href="https://www.manhuabei.com/manhua/shijizhiling/"><img src="https://f.mlxsc.com/images/cover/201907/1564406349XR7jMhSpcNpQMxfR.jpg" alt="食戟之灵" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="食戟之灵">
+    <h3><a href="https://www.manhuabei.com/manhua/shijizhiling/">食戟之灵</a></h3>
+    <p>作者：附田祐斗、佐伯俊</p>
+    <p>类型：美食/校园</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/shijizhiling/391774.html">318话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/shijizhiling/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="906">    <a class="comic_img" href="https://www.manhuabei.com/manhua/zhongjiedechitianshi/"><img src="https://f.mlxsc.com/images/cover/201812/1545146781NItkczEVe9BVHWaG.jpg" alt="终结的炽天使" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="终结的炽天使">
+    <h3><a href="https://www.manhuabei.com/manhua/zhongjiedechitianshi/">终结的炽天使</a></h3>
+    <p>作者：镜贵也，山本大和</p>
+    <p>类型：神魔/魔幻/奇幻/悬疑</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/zhongjiedechitianshi/581604.html">95话 鬼的故事</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/zhongjiedechitianshi/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="4">    <a class="comic_img" href="https://www.manhuabei.com/manhua/jueshitangmen/"><img src="https://f.mlxsc.com/images/cover/201811/1541864770V90lQLV0fJuSna3w.jpg" alt="绝世唐门" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="绝世唐门">
+    <h3><a href="https://www.manhuabei.com/manhua/jueshitangmen/">绝世唐门</a></h3>
+    <p>作者：神漫唐家三少</p>
+    <p>类型：热血/神魔/竞技</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/jueshitangmen/585706.html">574话 压制1</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/jueshitangmen/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="2342">    <a class="comic_img" href="https://www.manhuabei.com/manhua/rujiantongxuerumole/"><img src="https://f.mlxsc.com/images/cover/201905/15573843027492342ed19f860.jpg" alt="入间同学入魔了" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="入间同学入魔了">
+    <h3><a href="https://www.manhuabei.com/manhua/rujiantongxuerumole/">入间同学入魔了</a></h3>
+    <p>作者：西修</p>
+    <p>类型：搞笑/魔法</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/rujiantongxuerumole/585346.html">176话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/rujiantongxuerumole/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="1804">    <a class="comic_img" href="https://www.manhuabei.com/manhua/qiyuanzui/"><img src="https://f.mlxsc.com/images/cover/201907/1564406957P313_8YxJej30Yae.jpg" alt="七原罪" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="七原罪">
+    <h3><a href="https://www.manhuabei.com/manhua/qiyuanzui/">七原罪</a></h3>
+    <p>作者：铃木央</p>
+    <p>类型：热血/冒险</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/qiyuanzui/557041.html">新作 引发开端的雨林</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/qiyuanzui/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="2765">    <a class="comic_img" href="https://www.manhuabei.com/manhua/dianjuren/"><img src="https://f.mlxsc.com/images/cover/201905/15580551947962765a90cd3cc.jpg" alt="电锯人" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="电锯人">
+    <h3><a href="https://www.manhuabei.com/manhua/dianjuren/">电锯人</a></h3>
+    <p>作者：藤本タツキ</p>
+    <p>类型：格斗/魔幻/职场</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/dianjuren/585770.html">89话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/dianjuren/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="2253">    <a class="comic_img" href="https://www.manhuabei.com/manhua/zongzhijiushifeichangkeaiflymetothemoon/"><img src="https://f.mlxsc.com/images/cover/201907/1564510507E55Dv1d9XsZ_CiI6.jpg" alt="总之就是非常可爱" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="总之就是非常可爱">
+    <h3><a href="https://www.manhuabei.com/manhua/zongzhijiushifeichangkeaiflymetothemoon/">总之就是非常可爱</a></h3>
+    <p>作者：畑健二郎</p>
+    <p>类型：爱情</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/zongzhijiushifeichangkeaiflymetothemoon/585041.html">129话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/zongzhijiushifeichangkeaiflymetothemoon/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="19">    <a class="comic_img" href="https://www.manhuabei.com/manhua/yuanzun/"><img src="https://f.mlxsc.com/images/cover/201811/1541985734AesbmgALY5xgnTs0.jpg" alt="元尊" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="元尊">
+    <h3><a href="https://www.manhuabei.com/manhua/yuanzun/">元尊</a></h3>
+    <p>作者：Dr.大,吉天蚕土豆</p>
+    <p>类型：热血/玄幻/武侠</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/yuanzun/586562.html">260话下 条件</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/yuanzun/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="3578">    <a class="comic_img" href="https://www.manhuabei.com/manhua/quanzhifashi/"><img src="https://f.mlxsc.com/images/cover/201905/15592100646663578fe8368fb.jpg" alt="全职法师" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="全职法师">
+    <h3><a href="https://www.manhuabei.com/manhua/quanzhifashi/">全职法师</a></h3>
+    <p>作者：阅文漫画</p>
+    <p>类型：魔法</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/quanzhifashi/586144.html">599 遗迹古城？</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/quanzhifashi/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="11">    <a class="comic_img" href="https://www.manhuabei.com/manhua/wudongqiankun/"><img src="https://f.mlxsc.com/images/cover/201811/1541864771x35L57F9_Uu5FIW6.jpg" alt="武动乾坤" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="武动乾坤">
+    <h3><a href="https://www.manhuabei.com/manhua/wudongqiankun/">武动乾坤</a></h3>
+    <p>作者：神漫天蚕土豆</p>
+    <p>类型：热血/冒险/漫改</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/wudongqiankun/574570.html">280话 新的起点3</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/wudongqiankun/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="1667">    <a class="comic_img" href="https://www.manhuabei.com/manhua/pingxingtiantang/"><img src="https://f.mlxsc.com/images/cover/201901/1546807226Y00ge3dPwX2z8mE7.jpg" alt="平行天堂" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="平行天堂">
+    <h3><a href="https://www.manhuabei.com/manhua/pingxingtiantang/">平行天堂</a></h3>
+    <p>作者：冈本伦</p>
+    <p>类型：穿越/魔法/奇幻/后宫/异世界</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/pingxingtiantang/581948.html">133话试看版</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/pingxingtiantang/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="1857">    <a class="comic_img" href="https://www.manhuabei.com/manhua/douluodalu4zhongjidouluo/"><img src="https://f.mlxsc.com/images/cover/201907/15645106601dFR-SIHTiuSKjtM.jpg" alt="斗罗大陆4终极斗罗" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="斗罗大陆4终极斗罗">
+    <h3><a href="https://www.manhuabei.com/manhua/douluodalu4zhongjidouluo/">斗罗大陆4终极斗罗</a></h3>
+    <p>作者：神漫</p>
+    <p>类型：冒险/玄幻</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/douluodalu4zhongjidouluo/586145.html">无价之宝</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/douluodalu4zhongjidouluo/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="142">    <a class="comic_img" href="https://www.manhuabei.com/manhua/jiayounvyou/"><img src="https://f.mlxsc.com/images/cover/201901/1548658995B0nsme_3dVF55cCB.jpg" alt="家有女友" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="家有女友">
+    <h3><a href="https://www.manhuabei.com/manhua/jiayounvyou/">家有女友</a></h3>
+    <p>作者：流石景</p>
+    <p>类型：爱情</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/jiayounvyou/515459.html">276.5话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/jiayounvyou/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="2282">    <a class="comic_img" href="https://www.manhuabei.com/manhua/GrandBlue/"><img src="https://f.mlxsc.com/images/cover/201907/1564405508-aKqSvasfSbFC6ou.jpg" alt="GrandBlue" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="GrandBlue">
+    <h3><a href="https://www.manhuabei.com/manhua/GrandBlue/">GrandBlue</a></h3>
+    <p>作者：井上坚二,吉冈公威</p>
+    <p>类型：搞笑/爱情/校园</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/GrandBlue/582657.html">64话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/GrandBlue/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="3613">    <a class="comic_img" href="https://www.manhuabei.com/manhua/wodeshuangxiudaolv/"><img src="https://f.mlxsc.com/images/cover/201905/15592100856793613a182b7b.jpg" alt="我的双修道侣" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="我的双修道侣">
+    <h3><a href="https://www.manhuabei.com/manhua/wodeshuangxiudaolv/">我的双修道侣</a></h3>
+    <p>作者：樱前线动漫 图：刀瑞斯（Doris）,文：刀瑞斯（Doris）</p>
+    <p>类型：玄幻</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/wodeshuangxiudaolv/586371.html">581、洞天福地</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/wodeshuangxiudaolv/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="1801">    <a class="comic_img" href="https://www.manhuabei.com/manhua/heizhishi/"><img src="https://f.mlxsc.com/images/cover/201908/1564686777Gpk7VvAetyzrlu3v.jpg" alt="黑执事" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="黑执事">
+    <h3><a href="https://www.manhuabei.com/manhua/heizhishi/">黑执事</a></h3>
+    <p>作者：枢梁</p>
+    <p>类型：魔法/治愈/耽美</p>
+    <p>状态：连载中</p>
+    <p>最新：<a href="/manhua/heizhishi/585915.html">169话 那位执事，疾呼</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/heizhishi/">开始阅读</a></span>
+
+
+</li>
+<li class="list-comic" data-key="1741">    <a class="comic_img" href="https://www.manhuabei.com/manhua/yuanjunwuyu/"><img src="https://f.mlxsc.com/images/cover/201902/1550119772a301NlfqgpzGYKKR.jpg" alt="源君物语" default="images/default/cover.png"></a>
+<span class="comic_list_det" title="源君物语">
+    <h3><a href="https://www.manhuabei.com/manhua/yuanjunwuyu/">源君物语</a></h3>
+    <p>作者：稻叶みのり</p>
+    <p>类型：爱情</p>
+    <p>状态：已完结</p>
+    <p>最新：<a href="/manhua/yuanjunwuyu/407726.html">358话</a></p>
+    <a class="read_btn" href="https://www.manhuabei.com/manhua/yuanjunwuyu/">开始阅读</a></span>
+
+
+</li></ul>
+<div class='bottom_page'><ul class="pagination"><li class="first disabled"><span>首页</span></li>
+<li class="prev disabled"><span>上一页</span></li>
+<li class="active"><a href="/list/click/?page=1" data-page="0">1</a></li>
+<li><a href="/list/click/?page=2" data-page="1">2</a></li>
+<li><a href="/list/click/?page=3" data-page="2">3</a></li>
+<li><a href="/list/click/?page=4" data-page="3">4</a></li>
+<li><a href="/list/click/?page=5" data-page="4">5</a></li>
+<li><a href="/list/click/?page=6" data-page="5">6</a></li>
+<li><a href="/list/click/?page=7" data-page="6">7</a></li>
+<li><a href="/list/click/?page=8" data-page="7">8</a></li>
+<li><a href="/list/click/?page=9" data-page="8">9</a></li>
+<li><a href="/list/click/?page=10" data-page="9">10</a></li>
+<li class="next"><a href="/list/click/?page=2" data-page="1">下一页</a></li>
+<li class="last"><a href="/list/click/?page=520" data-page="519">尾页</a></li></ul></div></div>            </div>
+
+        </div>
+    </div>
+    <div class="wrap_mhlist_r con_right autoHeight">
+        <div class="mhlist_r_search autoHeight">
+            <div class="mhlist_r_head">
+                <span class="head_ico_t"></span>
+
+                <h2>漫画<em class="c_3">检索</em></h2>
+                <span class="h_eng">RETRIEVE</span>
+            </div>
+
+            <div id="w1" class="mhlist_r_con"><div class="filter-header clearfix"><div class="filter-title"></div><ul class="filter-click"><li class="filter-clear"><a class="filter-link-clear" href="/list/">重新筛选</a></li></ul></div>
+<div class="filter-nav clearfix">
+<div class="filter-item clearfix"><label>按类型</label><ul><li><a class="active" href="/list/">全部</a></li><li><a class="" href="/list/ertong/">儿童漫画</a></li><li><a class="" href="/list/shaonian/">少年漫画</a></li><li><a class="" href="/list/shaonv/">少女漫画</a></li><li><a class="" href="/list/qingnian/">青年漫画</a></li></ul></div>
+<div class="filter-item clearfix"><label>按地区</label><ul><li><a class="active" href="/list/">全部</a></li><li><a class="" href="/list/riben/">日本</a></li><li><a class="" href="/list/dalu/">大陆</a></li><li><a class="" href="/list/hongkong/">香港</a></li><li><a class="" href="/list/taiwan/">台湾</a></li><li><a class="" href="/list/oumei/">欧美</a></li><li><a class="" href="/list/hanguo/">韩国</a></li><li><a class="" href="/list/qita/">其他</a></li></ul></div>
+<div class="filter-item clearfix"><label>按剧情</label><ul><li><a class="active" href="/list/">全部</a></li><li><a class="" href="/list/rexue/">热血</a></li><li><a class="" href="/list/maoxian/">冒险</a></li><li><a class="" href="/list/xuanhuan/">玄幻</a></li><li><a class="" href="/list/gaoxiao/">搞笑</a></li><li><a class="" href="/list/lianai/">恋爱</a></li><li><a class="" href="/list/chongwu/">宠物</a></li><li><a class="" href="/list/xinzuo/">新作</a></li><li><a class="" href="/list/shenmo/">神魔</a></li><li><a class="" href="/list/jingji/">竞技</a></li><li><a class="" href="/list/chuanyue/">穿越</a></li><li><a class="" href="/list/mangai/">漫改</a></li><li><a class="" href="/list/bazong/">霸总</a></li><li><a class="" href="/list/dushi/">都市</a></li><li><a class="" href="/list/wuxia/">武侠</a></li><li><a class="" href="/list/shehui/">社会</a></li><li><a class="" href="/list/gufeng/">古风</a></li><li><a class="" href="/list/kongbu/">恐怖</a></li><li><a class="" href="/list/dongfang/">东方</a></li><li><a class="" href="/list/gedou/">格斗</a></li><li><a class="" href="/list/mofa/">魔法</a></li><li><a class="" href="/list/qingxiaoshuo/">轻小说</a></li><li><a class="" href="/list/mohuan/">魔幻</a></li><li><a class="" href="/list/shenghuo/">生活</a></li><li><a class="" href="/list/huanlexiang/">欢乐向</a></li><li><a class="" href="/list/lizhi/">励志</a></li><li><a class="" href="/list/yinyuewudao/">音乐舞蹈</a></li><li><a class="" href="/list/kehuan/">科幻</a></li><li><a class="" href="/list/meishi/">美食</a></li><li><a class="" href="/list/jiecao/">节操</a></li><li><a class="" href="/list/shengui/">神鬼</a></li><li><a class="" href="/list/aiqing/">爱情</a></li><li><a class="" href="/list/xiaoyuan/">校园</a></li><li><a class="" href="/list/zhiyu/">治愈</a></li><li><a class="" href="/list/qihuan/">奇幻</a></li><li><a class="" href="/list/xianxia/">仙侠</a></li><li><a class="" href="/list/yundong/">运动</a></li><li><a class="" href="/list/dongzuo/">动作</a></li><li><a class="" href="/list/rigeng/">日更</a></li><li><a class="" href="/list/lishi/">历史</a></li><li><a class="" href="/list/tuili/">推理</a></li><li><a class="" href="/list/xuanyi/">悬疑</a></li><li><a class="" href="/list/xiuzhen/">修真</a></li><li><a class="" href="/list/youxi/">游戏</a></li><li><a class="" href="/list/zhanzheng/">战争</a></li><li><a class="" href="/list/hougong/">后宫</a></li><li><a class="" href="/list/zhichang/">职场</a></li><li><a class="" href="/list/sige/">四格</a></li><li><a class="" href="/list/xingzhuanhuan/">性转换</a></li><li><a class="" href="/list/weiniang/">伪娘</a></li><li><a class="" href="/list/yanyi/">颜艺</a></li><li><a class="" href="/list/zhenren/">真人</a></li><li><a class="" href="/list/zazhi/">杂志</a></li><li><a class="" href="/list/zhentan/">侦探</a></li><li><a class="" href="/list/mengxi/">萌系</a></li><li><a class="" href="/list/danmei/">耽美</a></li><li><a class="" href="/list/baihe/">百合</a></li><li><a class="" href="/list/xifangmohuan/">西方魔幻</a></li><li><a class="" href="/list/jizhan/">机战</a></li><li><a class="" href="/list/zhaixi/">宅系</a></li><li><a class="" href="/list/renzhe/">忍者</a></li><li><a class="" href="/list/luoli/">luoli</a></li><li><a class="" href="/list/yishijie/">异世界</a></li><li><a class="" href="/list/xixie/">吸血</a></li><li><a class="" href="/list/qita/">其他</a></li><li><a class="" href="/list/zhandou/">战斗</a></li><li><a class="" href="/list/weimei/">唯美</a></li><li><a class="" href="/list/egao/">恶搞</a></li><li><a class="" href="/list/huanxiang/">幻想</a></li><li><a class="" href="/list/juqing/">剧情</a></li><li><a class="" href="/list/yujie/">御姐</a></li><li><a class="" href="/list/tiyu/">体育</a></li><li><a class="" href="/list/jianniang/">舰娘</a></li><li><a class="" href="/list/chunai/">纯爱</a></li><li><a class="" href="/list/nuexin/">虐心</a></li><li><a class="" href="/list/gaoqingdanxing/">高清单行</a></li><li><a class="" href="/list/qitaremenmanhua/">其他热门漫画</a></li><li><a class="" href="/list/mankezhan/">漫客栈</a></li><li><a class="" href="/list/badaozongcai/">霸道总裁</a></li><li><a class="" href="/list/weiweiyuanchuang/">薇薇原创</a></li><li><a class="" href="/list/jingsong/">惊悚</a></li><li><a class="" href="/list/zhiyinmanke/">知音漫客</a></li><li><a class="" href="/list/sasadongman/">飒飒动漫</a></li><li><a class="" href="/list/mingxing/">明星</a></li><li><a class="" href="/list/donghua/">动画</a></li><li><a class="" href="/list/jingpin/">精品</a></li><li><a class="" href="/list/xiuji/">秀吉</a></li><li><a class="" href="/list/xiaoshuogaibian/">小说改编</a></li><li><a class="" href="/list/AA/">AA</a></li><li><a class="" href="/list/fangyi/">防疫</a></li><li><a class="" href="/list/xitong/">系统</a></li><li><a class="" href="/list/mori/">末日</a></li><li><a class="" href="/list/fuchou/">复仇</a></li><li><a class="" href="/list/lingyi/">灵异</a></li><li><a class="" href="/list/shenxian/">神仙</a></li><li><a class="" href="/list/richang/">日常</a></li><li><a class="" href="/list/gaibian/">改编</a></li><li><a class="" href="/list/shaonv/">少女</a></li><li><a class="" href="/list/zongcai/">总裁</a></li><li><a class="" href="/list/juwei/">橘味</a></li><li><a class="" href="/list/jingqi/">惊奇</a></li><li><a class="" href="/list/danvzhu/">大女主</a></li><li><a class="" href="/list/zhongsheng/">重生</a></li><li><a class="" href="/list/dianjing/">电竞</a></li><li><a class="" href="/list/naodong/">脑洞</a></li><li><a class="" href="/list/qingchun/">青春</a></li><li><a class="" href="/list/nixi/">逆袭</a></li><li><a class="" href="/list/quanmou/">权谋</a></li><li><a class="" href="/list/yulequan/">娱乐圈</a></li><li><a class="" href="/list/langman/">浪漫</a></li><li><a class="" href="/list/shenhao/">神豪</a></li><li><a class="" href="/list/gaotian/">高甜</a></li><li><a class="" href="/list/guaiwu/">怪物</a></li><li><a class="" href="/list/yaoguai/">妖怪</a></li><li><a class="" href="/list/gongdou/">宫斗</a></li><li><a class="" href="/list/xiuxian/">修仙</a></li><li><a class="" href="/list/jijia/">机甲</a></li><li><a class="" href="/list/sangshi/">丧尸</a></li><li><a class="" href="/list/lieqi/">猎奇</a></li><li><a class="" href="/list/haokuai/">豪快</a></li><li><a class="" href="/list/unknown/">ゆり</a></li></ul></div>
+<div class="filter-item clearfix"><label>按受众</label><ul><li><a class="active" href="/list/">全部</a></li><li><a class="" href="/list/12suiyixia/">12岁以下</a></li><li><a class="" href="/list/12_18sui/">12-18岁</a></li><li><a class="" href="/list/18_25sui/">18-25岁</a></li><li><a class="" href="/list/25suiyishang/">25岁以上</a></li></ul></div>
+<div class="filter-item clearfix"><label>按年份</label><ul><li><a class="active" href="/list/">全部</a></li><li><a class="" href="/list/2000nianqian/">2000年前</a></li><li><a class="" href="/list/2001nian/">2001年</a></li><li><a class="" href="/list/2002nian/">2002年</a></li><li><a class="" href="/list/2003nian/">2003年</a></li><li><a class="" href="/list/2004nian/">2004年</a></li><li><a class="" href="/list/2005nian/">2005年</a></li><li><a class="" href="/list/2006nian/">2006年</a></li><li><a class="" href="/list/2007nian/">2007年</a></li><li><a class="" href="/list/2008nian/">2008年</a></li><li><a class="" href="/list/2009nian/">2009年</a></li><li><a class="" href="/list/2010nian/">2010年</a></li><li><a class="" href="/list/2011nian/">2011年</a></li><li><a class="" href="/list/2012nian/">2012年</a></li><li><a class="" href="/list/2013nian/">2013年</a></li><li><a class="" href="/list/2014nian/">2014年</a></li><li><a class="" href="/list/2015nian/">2015年</a></li><li><a class="" href="/list/2016nian/">2016年</a></li><li><a class="" href="/list/2017nian/">2017年</a></li><li><a class="" href="/list/2018nian/">2018年</a></li><li><a class="" href="/list/2019nian/">2019年</a></li><li><a class="" href="/list/2020nian/">2020年</a></li></ul></div>
+<div class="filter-item clearfix"><label>按性别</label><ul><li><a class="active" href="/list/">全部</a></li><li><a class="" href="/list/gender/">通用</a></li><li><a class="" href="/list/male/">男</a></li><li><a class="" href="/list/female/">女</a></li></ul></div>
+<div class="filter-item clearfix"><label>按字母</label><ul><li><a class="active" href="/list/">全部</a></li><li><a class="" href="/list/a/">A</a></li><li><a class="" href="/list/b/">B</a></li><li><a class="" href="/list/c/">C</a></li><li><a class="" href="/list/d/">D</a></li><li><a class="" href="/list/e/">E</a></li><li><a class="" href="/list/f/">F</a></li><li><a class="" href="/list/g/">G</a></li><li><a class="" href="/list/h/">H</a></li><li><a class="" href="/list/i/">I</a></li><li><a class="" href="/list/j/">J</a></li><li><a class="" href="/list/k/">K</a></li><li><a class="" href="/list/l/">L</a></li><li><a class="" href="/list/m/">M</a></li><li><a class="" href="/list/n/">N</a></li><li><a class="" href="/list/o/">O</a></li><li><a class="" href="/list/p/">P</a></li><li><a class="" href="/list/q/">Q</a></li><li><a class="" href="/list/r/">R</a></li><li><a class="" href="/list/s/">S</a></li><li><a class="" href="/list/t/">T</a></li><li><a class="" href="/list/u/">U</a></li><li><a class="" href="/list/v/">V</a></li><li><a class="" href="/list/w/">W</a></li><li><a class="" href="/list/x/">X</a></li><li><a class="" href="/list/y/">Y</a></li><li><a class="" href="/list/z/">Z</a></li><li><a class="" href="/list/1/">其他</a></li></ul></div>
+<div class="filter-item clearfix"><label>按进度</label><ul><li><a class="active" href="/list/">全部</a></li><li><a class="" href="/list/wanjie/">已完结</a></li><li><a class="" href="/list/lianzai/">连载中</a></li></ul></div></div>
+</div>        </div>
+        <!--AD 开始-->
+        <div class="banner_rank widthEigRight con_right">
+            <h2>人气排行</h2>
+            <ul class="rank_tabs tabs">
+
+                <li class="active"><a class="tab-option" href="#rank-click-week" data-hover="tab">周</a></li>
+                <li><a class="tab-option" href="#rank-click-month" data-hover="tab">月</a></li>
+            </ul>
+
+            <div class="tab-content active" id="rank-click-week">
+                <ul id="w2" class="autoHeight">    <li class="rank_tabs_first" title="一拳超人">
+        <sub></sub><em>01</em>
+        <a href="https://www.manhuabei.com/manhua/yiquanchaoren/"><img src="https://f.mlxsc.com/images/cover/201905/1558384189-Nm4NaFsOVxmHZf1.jpg" width="70" height="90" alt="" default="images/default/cover.png"></a>        <span class="rank_first_con">
+            <a href="https://www.manhuabei.com/manhua/yiquanchaoren/" title="一拳超人">一拳超人</a>            <p>作者：村田雄介,ONE</p>
+            <p>更新至<a href="/manhua/yiquanchaoren/582954.html">原作版132话</a></p>
+        </span>
+    </li>
+
+    <li class="rank_tabs_li" title="海贼王">
+        <em class="c_5">2</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/haizeiwang/" title="海贼王">海贼王</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/haizeiwang/585744.html">992话</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="博人传">
+        <em class="c_5">3</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/borenchuan/" title="博人传">博人传</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/borenchuan/577429.html">50话 利用价值</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="斗罗大陆">
+        <em class="c_5">4</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/douluodalu/" title="斗罗大陆">斗罗大陆</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/douluodalu/586748.html">721话 无敌天才1</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="一人之下">
+        <em class="">5</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/yirenzhixia/" title="一人之下">一人之下</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/yirenzhixia/585612.html">495</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="咒术回战">
+        <em class="">6</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/zhoushuhuizhan/" title="咒术回战">咒术回战</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/zhoushuhuizhan/585783.html">126话</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="百炼成神">
+        <em class="">7</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/bailianchengshen/" title="百炼成神">百炼成神</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/bailianchengshen/586226.html">637话</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="黑色五叶草">
+        <em class="">8</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/heisewuyecao/" title="黑色五叶草">黑色五叶草</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/heisewuyecao/586081.html">268话</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="进击的巨人">
+        <em class="">9</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/jinjidejuren/" title="进击的巨人">进击的巨人</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/jinjidejuren/583633.html">133话东立版</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="Dr.STONE 石纪元">
+        <em class="">10</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/DrSTONE/" title="Dr.STONE 石纪元">Dr.STONE 石纪元</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/DrSTONE/586079.html">170话</a></span>
+    </li>
+</ul>            </div>
+            <div class="tab-content" id="rank-click-month">
+                <ul id="w3" class="autoHeight">    <li class="rank_tabs_first" title="海贼王">
+        <sub></sub><em>01</em>
+        <a href="https://www.manhuabei.com/manhua/haizeiwang/"><img src="https://f.mlxsc.com/images/cover/201812/1543711492cCyvU1SnsxO5FZv_.jpg" width="70" height="90" alt="" default="images/default/cover.png"></a>        <span class="rank_first_con">
+            <a href="https://www.manhuabei.com/manhua/haizeiwang/" title="海贼王">海贼王</a>            <p>作者：尾田荣一郎</p>
+            <p>更新至<a href="/manhua/haizeiwang/585744.html">992话</a></p>
+        </span>
+    </li>
+
+    <li class="rank_tabs_li" title="一拳超人">
+        <em class="c_5">2</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/yiquanchaoren/" title="一拳超人">一拳超人</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/yiquanchaoren/582954.html">原作版132话</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="一人之下">
+        <em class="c_5">3</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/yirenzhixia/" title="一人之下">一人之下</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/yirenzhixia/585612.html">495</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="进击的巨人">
+        <em class="c_5">4</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/jinjidejuren/" title="进击的巨人">进击的巨人</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/jinjidejuren/583633.html">133话东立版</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="咒术回战">
+        <em class="">5</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/zhoushuhuizhan/" title="咒术回战">咒术回战</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/zhoushuhuizhan/585783.html">126话</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="斗罗大陆">
+        <em class="">6</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/douluodalu/" title="斗罗大陆">斗罗大陆</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/douluodalu/586748.html">721话 无敌天才1</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="百炼成神">
+        <em class="">7</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/bailianchengshen/" title="百炼成神">百炼成神</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/bailianchengshen/586226.html">637话</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="电锯人">
+        <em class="">8</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/dianjuren/" title="电锯人">电锯人</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/dianjuren/585770.html">89话</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="博人传">
+        <em class="">9</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/borenchuan/" title="博人传">博人传</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/borenchuan/577429.html">50话 利用价值</a></span>
+    </li>
+
+    <li class="rank_tabs_li" title="总之就是非常可爱">
+        <em class="">10</em>
+        <span class="rank_tabs_title"><a href="https://www.manhuabei.com/manhua/zongzhijiushifeichangkeaiflymetothemoon/" title="总之就是非常可爱">总之就是非常可爱</a></span>
+        <span class="rank_tabs_sec"><a href="/manhua/zongzhijiushifeichangkeaiflymetothemoon/585041.html">129话</a></span>
+    </li>
+</ul>            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="foot">
+    <div class="foot_con">
+        <div id="w8" class="app_code"></div>
+        <div id="w9" class="about"><div class="block-header clearfix"><div class="block-title"><span>关于</span></div><div class="block-subtitle"><span></span></div></div>
+<ul class='foot_con_list'><li data-key="43"><a href="/guanyu/us.html#a1" target="_blank">关于我们</a></li>
+<li data-key="42"><a href="/guanyu/us.html#a3" target="_blank">免责声明</a></li></ul></div>        <div id="w10" class="throw"><div class="block-header clearfix"><div class="block-title"><span>合作</span></div><div class="block-subtitle"><span></span></div></div>
+<ul class='foot_con_list'><li data-key="44"><a href="https://www.50mh.com/guanyu/us.html#a2" target="_blank">作者合作</a></li></ul></div>        <div class="copyr">
+            <h3>漫画呗（原 漫画堆）</h3>
+            <p>所有漫画均来自搜索和分享，以便漫画爱好者研究漫画技巧和构图方式。若喜欢，请购买正版书籍以支持作者！漫画版权归原作者所有。如有侵犯到您的权益，请联系我们，确认之后立即删除。本站不负任何相关责任！ ©2020 <a href="https://www.manhuabei.com" target="_blank">漫画呗（漫画堆）</a> <span style="display:none;"><!-- Global site tag (gtag.js) - Google Analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154557870-1"></script> <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());    gtag('config', 'UA-154557870-1'); </script> <script> var cnzz_s_tag = document.createElement('script'); cnzz_s_tag.type = 'text/javascript'; cnzz_s_tag.async = true; cnzz_s_tag.charset = 'utf-8'; cnzz_s_tag.src = 'https://w.cnzz.com/c.php?id=1278944425&async=1'; var root_s = document.getElementsByTagName('script')[0]; root_s.parentNode.insertBefore(cnzz_s_tag, root_s); </script> <script> var _hmt = _hmt || []; (function() {   var hm = document.createElement("script");   hm.src = "https://hm.baidu.com/hm.js?0059b5e0311ca68e8eda1e34bfc6dcab";   var s = document.getElementsByTagName("script")[0];    s.parentNode.insertBefore(hm, s); })(); </script></span> </p>
+        </div>
+    </div>
+</div>
+<div class="side_public scroll-top" id="sidePublic">
+    <a href="javascript:SinMH.scrollTo(0);" id="returnTop" class="return-top"></a>
+    <!--<a href="/app" class="ewm" target="_blank"></a>-->
+    <span id="w11"><a href="https://jinshuju.net/f/0dfCRw" target="_blank"><img src="https://f.mlxsc.com/images/block/201904/1555432685QoSGl9m6Z6zKuL7c.jpg" width="34" height="34" alt=""></a></span>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="alert-modal" id="alert-modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">提示信息</h4>
+            </div>
+            <div class="modal-body text-center"> 弹窗内容</div>
+            <div class="modal-footer text-center" style="text-align: center;">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">确 &nbsp; 定
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="confirm-modal" id="confirm-modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">提示信息</h4>
+            </div>
+            <div class="modal-body text-center"> 弹窗内容</div>
+            <div class="modal-footer text-center" style="text-align: center;">
+                <button type="button" class="btn btn-primary btn-confirm" data-dismiss="modal" aria-label="Confirm">确
+                    &nbsp; 定
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">取 &nbsp; 消
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="search-template" type="text/html">
+    <%if(items&&items.length>0){%>
+    <%for(var i = 0; i
+    <items.length;i++){
+    var item = items[i];
+    %>
+    <li title="<%=item.title%>" data-url="<%= item.uri %>">
+
+        <p class="pull-left">
+        [<a href="/author/id-<%= item.author_id %>/"><%=item.author%></a>]
+        <a href="<%= item.uri %>"><%=item.title%></a>
+        [<span class="<%=item.serialise==1?'text-danger':'text-success'%>"><%=item.serialise==1?'连载中':'已完结'%></span>]
+        </p>
+        <% if(item.last_chapter_id>0){ %>
+        <span class="pull-right">更新至：
+        <a href="<%= item.uri+ item.last_chapter_id%>.html"><%=item.last_chapter_name%></a></span>
+        <% } %>
+    </li>
+    <%}%>
+    <%}else{%>
+    <li>暂无搜索结果</li>
+    <%}%>
+</script>
+<script id="history-template" type="text/html">
+    <%if(list&&list.length>0){%>
+    <ul class="book_con_li">
+        <%for(var i = 0; i < list.length;i++){
+        if(i>15) break;
+        var item = list[i];
+        %>
+        <li>
+            <span class="tip"></span>
+            <a class="book_title" title="<%=item.comic_name%>" href="<%=item.comic_url%>"
+               target="_blank"><%=item.comic_name%></a>
+            <span class="book_l">看到</span>
+            <a class="book_num"
+               title="<%=item.read_chapter%>"
+               href="<%=item.read_chapter_url%>"
+               target="_blank"><%=item.read_chapter%></a>
+            <span class="book_clo" onclick="SinMH.removeHistory(<%=item.comic_id%>);">X</span></li>
+
+        <%}%>
+    </ul>
+    <a class="book_con_bottom" href="/member/history/" target="_blank">查看更多历史记录</a>    <%}else{%>
+    <div class="no_content">你还没有观看过作品哦</div>
+    <%}%>
+</script>
+<script id="subscribe-template" type="text/html">
+    <%if(list&&list.length>0){%>
+    <ul class="book_con_li">
+        <%for(var i = 0; i < list.length;i++){
+        if(i>15) break;
+        var item = list[i];
+        %>
+        <li>
+            <span class="tip"></span>
+            <a class="book_title wid" title="<%=item.comic_name%>" href="<%=item.comic_url%>" target="_blank"><%=item.comic_name%></a>
+            <% if(item.update_chapter!=null) { %>
+            <a class="book_num" title="<%=item.update_chapter%>" href="<%=item.update_chapter_url%>" target="_blank"><%=item.update_chapter%></a>
+            <% }
+            if(item.status == 0)%><span href="" class="subcribe_new"></span>
+        </li>
+
+        <%}%>
+    </ul>
+    <a class="book_con_bottom" href="/member/subscribe/" target="_blank">查看更多订阅</a>    <%}else{%>
+    <div class="no_content">你还没有订阅过作品哦</div>
+    <%}%>
+</script>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.1/jquery.js"></script>
+<script src="/assets/a4696427/yii.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+<script src="https://cdn.staticfile.org/toastr.js/2.1.2/toastr.min.js"></script>
+<script src="/plugins/baiduTemplate.js"></script>
+<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script src="/plugins/jquery/jquery.image.js"></script>
+<script src="https://cdn.staticfile.org/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+<script src="/plugins/jquery/jquery.hotkeys.js"></script>
+<script src="/plugins/bootstrap/bootstrap.hover.dropdown.js"></script>
+<script src="/plugins/bootstrap/bootstrap.hover.tab.js"></script>
+<script src="/js/config.js"></script>
+<script src="/js/common.js"></script>
+<script src="/assets/7a5b1151/js/theme.js"></script>
+<script>jQuery(function ($) {
+;SinMH.init();SinTheme.init();$("img").lazyload();
+});</script></body>
+</html>
