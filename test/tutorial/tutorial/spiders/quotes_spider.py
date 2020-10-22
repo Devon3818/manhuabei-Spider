@@ -5,6 +5,21 @@ class QuotesSpider(scrapy.Spider):
   name = "quotes"
   jsfun = None
 
+
+  cartoon = {
+    'name': '',
+    'des': '',
+    'cover': '',
+    'author': '',
+    'ststus': '',
+    'typeTag': '',
+    'classTag': [],
+    'area': '',
+    'alias': '',
+    'updateTime': ''
+  }
+
+
   def start_requests(self):
     urls = [
       'https://www.manhuabei.com/list/click/?page=1',
@@ -61,6 +76,11 @@ class QuotesSpider(scrapy.Spider):
   def comicParse(self, response):
     page = response.url.split("/")[-2]
     filename = f'quotes-{page}.html'
+
+    self.cartoon[ 'name' ] = response.css('meta[name="og:title"]::attr(content)').get()
+    self.cartoon[ 'des' ] = response.css('meta[name="og:description"]::attr(content)').get()
+    
+
     # 信息资料
     comic_deCon_liO = response.css('.comic_deCon_liO li')
     # 简介
