@@ -1,17 +1,20 @@
 import scrapy
 import execjs
+import re
+from tutorial.items import CartoonItem, SectionItem
 
 class QuotesSpider(scrapy.Spider):
   name = "quotes"
   jsfun = None
 
+  Cartoon = CartoonItem()
 
   cartoon = {
     'name': '',
     'des': '',
     'cover': '',
     'author': '',
-    'ststus': '',
+    'status': '',
     'typeTag': '',
     'classTag': [],
     'area': '',
@@ -30,7 +33,7 @@ class QuotesSpider(scrapy.Spider):
   def parse(self, response):
     page = response.url.split("/")[-2]
     filename = f'quotes-{page}.html'
-    list_comic = response.css('.list-comic')
+    list_comic = response.css('.list-comic')[:1]
     # print(list_comic)
 
     lock = False
@@ -40,6 +43,7 @@ class QuotesSpider(scrapy.Spider):
         lock = True
         # 封面图
         cover_src = list_comic_item.css('.comic_img img::attr(src)').get()
+        self.Cartoon['cover'] = cover_src
         # 详情地址
         comic_href = list_comic_item.css('.comic_img::attr(href)').get()
         # print(cover_src)
@@ -77,14 +81,15 @@ class QuotesSpider(scrapy.Spider):
     page = response.url.split("/")[-2]
     filename = f'quotes-{page}.html'
 
-    self.cartoon[ 'name' ] = response.css('meta[name="og:title"]::attr(content)').get()
-    self.cartoon[ 'des' ] = response.css('meta[name="og:description"]::attr(content)').get()
-    
+    self.Cartoon['id'] = page
+    self.Cartoon['name'] = response.css('meta[property="og:title"]::attr(content)').get()
+    self.Cartoon['des']= response.css('meta[property="og:description"]::attr(content)').get()
+    self.Cartoon['updateTime']= response.css('meta[property="og:novel:update_time"]::attr(content)').get()
 
     # 信息资料
     comic_deCon_liO = response.css('.comic_deCon_liO li')
     # 简介
-    comic_deCon_liT = response.css('.comic_deCon_d::text').get()
+    # comic_deCon_liT = response.css('.comic_deCon_d::text').get()
 
     li_list = []
 
@@ -103,6 +108,12 @@ class QuotesSpider(scrapy.Spider):
       else:
         li_list.insert( comic_deCon_liO_index, comic_deCon_liO[ comic_deCon_liO_index ].css('::text').get() )
 
+    self.Cartoon['author'] = li_list[0]
+    self.Cartoon['status'] = li_list[1]
+    self.Cartoon['typeTag'] = li_list[2]
+    self.Cartoon['classTag'] = li_list[3]
+    self.Cartoon['area'] = li_list[4]
+    self.Cartoon['alias'] = li_list[5]
     # ['村田雄介,ONE', '连载中', '少年漫画', ['热血', '战斗'], '日本', '别名： 一击男，ワンパンマン，ONE PUNCH-MAN']
     # print(li_list)
 
@@ -133,13 +144,79 @@ class QuotesSpider(scrapy.Spider):
         fragment.append( chip )
       
       zj_data[ zj_list_con_index ]['chip'] = fragment
+      self.Cartoon['chapter'] = zj_data
+
+    yield self.Cartoon
 
     # 全部章节
-    print( zj_data )
+    # print( zj_data )
+
+    lock1 = False
+    lock2 = False
+
+    for section in zj_data:
+      # print(section['title'])
+      if lock1 == False:
+        lock1 = True
+        title = section['title']
+        print(title)
+        for index,fragment in enumerate(section['chip']):
+          if lock2 == False:
+            lock2 = True
+            name = fragment['title']
+            href = fragment['href']
+            print(name)
+            print(href)
+            url = 'https://www.manhuabei.com' + href
+            request = scrapy.Request(url=url, callback=self.sectionParse)
+            request.meta['title'] = title
+            request.meta['name'] = name
+            request.meta['href'] = href
+            request.meta['index'] = index
+            yield request
 
 
-    # with open(filename, 'wb') as f:
-    #   f.write(response.body)
-    #   f.close()
+
+    with open(filename, 'wb') as f:
+      f.write(response.body)
+      f.close()
+
+  def sectionParse(self, response):
+    section = SectionItem()
+    section['title'] = response.meta['title']
+    section['name'] = response.meta['name']
+    section['href'] = response.meta['href']
+    section['index'] = response.meta['index']
+    
+    chapter_image_code = re.search('chapterImages = \".+\";var chapterPath', response.text).group()
+    chapter_image_code = re.search('\".+\"', chapter_image_code).group()
+    print("chapter_image_code")
+    #print(chapter_image_code)
+    chapter_image_code = chapter_image_code[1:-1]
+    print(chapter_image_code)
+
+
+    if self.jsfun is None:
+    
+      with open('crypto.js') as f:
+        jsdata = f.read()
+        f.close()
+
+      self.jsfun = execjs.compile(jsdata)
+
+    picList = self.jsfun.call('decrypt20180904', chapter_image_code)
+    section['picture'] = picList
+    print( picList )
+
+    with open('chip.json', 'wb') as f:
+      for pic in picList:
+        f.write(pic.encode())
+        f.write('\r\n'.encode())
+
+
+    with open('details.html', 'wb') as f:
+      f.write(response.body)
+      f.close()
+    yield section
 
 
