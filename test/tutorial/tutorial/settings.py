@@ -86,3 +86,12 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# MongoDB数据库配置
+sql_host = '182.254.137.96'
+sql_port = 27017
+sql_user = 'manhua'
+sql_passwd = 'manhua3818'
+sql_db = 'manhua'
+collection_manhua = 'manhua'
+collection_section = 'section'

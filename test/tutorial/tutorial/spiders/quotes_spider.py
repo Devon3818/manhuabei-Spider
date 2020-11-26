@@ -9,77 +9,37 @@ class QuotesSpider(scrapy.Spider):
 
   Cartoon = CartoonItem()
 
-  cartoon = {
-    'name': '',
-    'des': '',
-    'cover': '',
-    'author': '',
-    'status': '',
-    'typeTag': '',
-    'classTag': [],
-    'area': '',
-    'alias': '',
-    'updateTime': ''
-  }
+  page = 1
+  amount = 10
+
+  def __init__(self, page = 1, amount = 10):
+    self.page = page
+    self.amount = amount + page
 
 
   def start_requests(self):
-    urls = [
-      'https://www.manhuabei.com/list/click/?page=1',
-    ]
-    for url in urls:
+    for page in range( self.page, self.amount ):
+      url = 'https://www.manhuabei.com/list/click/?page=' + page
       yield scrapy.Request(url=url, callback=self.parse)
 
   def parse(self, response):
-    page = response.url.split("/")[-2]
-    filename = f'quotes-{page}.html'
     list_comic = response.css('.list-comic')[:1]
     # print(list_comic)
 
-    lock = False
-
     for list_comic_item in list_comic:
-      if lock == False:
-        lock = True
-        # 封面图
-        cover_src = list_comic_item.css('.comic_img img::attr(src)').get()
-        self.Cartoon['cover'] = cover_src
-        # 详情地址
-        comic_href = list_comic_item.css('.comic_img::attr(href)').get()
-        # print(cover_src)
-        # print(comic_href)
+      # 封面图
+      cover_src = list_comic_item.css('.comic_img img::attr(src)').get()
+      self.Cartoon['cover'] = cover_src
+      # 详情地址
+      comic_href = list_comic_item.css('.comic_img::attr(href)').get()
+      # print(cover_src)
+      # print(comic_href)
 
-        yield scrapy.Request(url=comic_href, callback=self.comicParse)
-
-    # if self.jsfun is None:
-    
-    #   with open('crypto.js') as f:
-    #     jsdata = f.read()
-    #     f.close()
-
-    #   self.jsfun = execjs.compile(jsdata)
-
-    # chapterImages = "kRij9OUITN7t1z3+z94zByI2A3QpIRkKaudQ1MoB5/Ddswec4uYgk9GNuU4fpwvLrlFKA7evIq1tVHnl315R4Dk6OS1ifOG0J9WFsOh/1V8LoVzpNm7pmSotdeeT3SKxu1lE2fVvlzMD7TNfKnYefeb/6uxinaj7SAZKAH5wPfLGo25/DcYTybatHaZy+KYwCMarcbVbtQ0DQYv0Z9dmNEXeXrElujpSxBE+q8ctrPW7ei3FbvD4WrVWLffr04er55ChfX9ZZ4v778cpDx98/f1dknlJCWjBDexM+YFHa+0L8XS21vuXMuqC3SK7Jtgou3t+Nf0yKfd7Ywmc7VAYF7f+c5/w5tbEJAExOkIkTk8KZHnkUr4sbbausyjg4JTQ2UG6ObqON2kh57yyHZ7zRcM8Bgotjf6EFG2zxaQ98V/EJqhK53CzhQDwtgE2s4W1M/yhYcx1FCVlg6Vk3+kkjHESHR2FA1Z5nzCWls3zFsRz8hmSMakW3k/847Iu4N1I9gdNF3puS/cCw/i2XrVr/Q06CdLxD7VVwRJ3sYIB3WFEp5BjxNZ7xsHQdAdmzCcU+eGo1e8KJAQTFC2FrAzv9jXMRJmZv8Am7ew5A9RIXSCFeXcZ0ZbeK394iQnmEV62M+3rmXaQIv4RXFoDLLByqHgmRbfa4lGCMxYb1vEdVVAmCaEdCYaWwn/Q+lzQwv8gNA1vnfsvLIcOplhizMDRtwjWVDvTxYGHtCM5Lu6abtw7L68Z+ePR+rzN4f7m65PqXnsD2j2N24wi7HrRtCDfFdlwDmkhOFriBKdFoNXT3m7nTbQM7KjHi7iGM8bDt3rx9AuiBKjpj3R/F/Ci40c3O1lo+qJOIQaGIIHJS1TXYSDVrjQYhBI+7Z8++zXCrMvt"
-
-    # picList = self.jsfun.call('decrypt20180904', chapterImages)
-
-    # print( picList )
-
-    # with open(filename, 'wb') as f:
-    #   for pic in picList:
-    #     f.write(pic.encode())
-    #     f.write('\r\n'.encode())
-
-    # with open(filename, 'wb') as f:
-    #   f.write(response.body)
-    #   f.close()
-
-    self.log(f'Saved file {filename}')
+      yield scrapy.Request(url=comic_href, callback=self.comicParse)  
 
 
   def comicParse(self, response):
     page = response.url.split("/")[-2]
-    filename = f'quotes-{page}.html'
 
     self.Cartoon['id'] = page
     self.Cartoon['name'] = response.css('meta[property="og:title"]::attr(content)').get()
@@ -151,35 +111,21 @@ class QuotesSpider(scrapy.Spider):
     # 全部章节
     # print( zj_data )
 
-    lock1 = False
-    lock2 = False
-
     for section in zj_data:
-      # print(section['title'])
-      if lock1 == False:
-        lock1 = True
-        title = section['title']
-        print(title)
-        for index,fragment in enumerate(section['chip']):
-          if lock2 == False:
-            lock2 = True
-            name = fragment['title']
-            href = fragment['href']
-            print(name)
-            print(href)
-            url = 'https://www.manhuabei.com' + href
-            request = scrapy.Request(url=url, callback=self.sectionParse)
-            request.meta['title'] = title
-            request.meta['name'] = name
-            request.meta['href'] = href
-            request.meta['index'] = index
-            yield request
-
-
-
-    with open(filename, 'wb') as f:
-      f.write(response.body)
-      f.close()
+      title = section['title']
+      #print(title)
+      for index,fragment in enumerate(section['chip']):
+        name = fragment['title']
+        href = fragment['href']
+        #print(name)
+        #print(href)
+        url = 'https://www.manhuabei.com' + href
+        request = scrapy.Request(url=url, callback=self.sectionParse)
+        request.meta['title'] = title
+        request.meta['name'] = name
+        request.meta['href'] = href
+        request.meta['index'] = index
+        yield request
 
   def sectionParse(self, response):
     section = SectionItem()
@@ -190,10 +136,10 @@ class QuotesSpider(scrapy.Spider):
     
     chapter_image_code = re.search('chapterImages = \".+\";var chapterPath', response.text).group()
     chapter_image_code = re.search('\".+\"', chapter_image_code).group()
-    print("chapter_image_code")
+    #print("chapter_image_code")
     #print(chapter_image_code)
     chapter_image_code = chapter_image_code[1:-1]
-    print(chapter_image_code)
+    #print(chapter_image_code)
 
 
     if self.jsfun is None:
@@ -206,17 +152,7 @@ class QuotesSpider(scrapy.Spider):
 
     picList = self.jsfun.call('decrypt20180904', chapter_image_code)
     section['picture'] = picList
-    print( picList )
-
-    with open('chip.json', 'wb') as f:
-      for pic in picList:
-        f.write(pic.encode())
-        f.write('\r\n'.encode())
-
-
-    with open('details.html', 'wb') as f:
-      f.write(response.body)
-      f.close()
+    #print( picList )
     yield section
 
 

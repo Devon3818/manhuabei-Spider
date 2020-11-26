@@ -8,14 +8,15 @@
 from itemadapter import ItemAdapter
 from pymongo import MongoClient
 from tutorial.items import CartoonItem, SectionItem
+from tutorial.settings import sql_host, sql_port, sql_user, sql_passwd, sql_db, collection_manhua, collection_section
 
 class TutorialPipeline:
 
     def __init__(self):
         try:
-            self.client = MongoClient("182.254.137.96", 27017)
-            self.mhpost = self.client["manhua"]
-            self.mhpost.authenticate("manhua", "manhua3818")
+            self.client = MongoClient(sql_host, sql_port)
+            self.mhpost = self.client[sql_db]
+            self.mhpost.authenticate(sql_user, sql_passwd)
             print("MonoDB connection established...")
         except Exception as e:
             print("An exception occurred when try to connect to MongoDB: "+str(e))
@@ -36,7 +37,7 @@ class TutorialPipeline:
                 'updateTime': item['updateTime'],
                 'chapter': item['chapter']
             }
-            self.mhpost['manhua'].insert_one(data)
+            self.mhpost[ collection_manhua ].insert_one(data)
 
         if isinstance(item, SectionItem):
             data = {
@@ -46,5 +47,5 @@ class TutorialPipeline:
                 'index': item['index'],
                 'picture': item['picture']
             }
-            self.mhpost['section'].insert_one(data)
+            self.mhpost[ collection_section ].insert_one(data)
         return item
