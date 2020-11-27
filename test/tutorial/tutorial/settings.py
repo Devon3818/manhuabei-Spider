@@ -87,6 +87,12 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+# 解密串
+decrypt = 'decrypt20180904'
+
+# 漫画host
+web_host = 'https://www.manhuabei.com'
+
 # MongoDB数据库配置
 sql_host = '182.254.137.96'
 sql_port = 27017
